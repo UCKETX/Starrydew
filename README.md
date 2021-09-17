@@ -1,58 +1,58 @@
-# Starrydew-tutorial
-## 在此可以查看StarryDew全部功能
+# Starrydew-Wiki
+* StarryDew是基于JavaScript的我的世界基岩版WebSocket快速建造程序
+* 如要了解更多，请加QQ群：[956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
 ---
-```help
+### 基础命令
+```
 set pos - 保存当前坐标(执行所有导出/导入指令前必须使用 该指令以保存您的位置)
-
-speed <数字:毫秒> - 设置导出的速度(默认7)
-
-speed2 <数字:毫秒> - 设置.sd文件导入的速度
-
-run <字符串:指令> - 在控制台执行指令并将结果返回到游戏中
-
-times <数字:方块数> - 在自动执行各种导出/导入指令时title的提示速度( 每xxx 方块title一次，默认为20，推荐设置为20)
-
-       import <字符串:文件> - 导入./buildings/ 路径下 的.sd文件
-
-       auto [数字: 索引] - 使用readdir指令后会显示文件索引，索引代表着相应的文件
-
-export <坐标x增加值> <坐标y增加值> <坐标z增加值> <字符串:文件名> - 导出指定大小的区域
-
-        auto <字符串: 文件名> - 根据set pos, pos1 ,pos2自动计算导出大小(set pos必须在建筑的左上角(对应建筑所有顶点x，y，z坐标 都会增加的位置),pos1,pos2必须位于建筑的对角线)
 
 pos1 - 设置pos1为当前坐标
 
 pos2 - 设置pos2为当前坐标
 
-readdir - 读取./buildings/路径下的所有文件并显示到聊天栏并显示文件索引
+pos3 - 设置pos3为当前坐标
 
-eval <字符串: js代码> - 控制台执行javascript代码(调试)
+speed <数字:毫秒> - 设置导出的速度(默认7)
 
-time - 显示当前时间
+speed2 <数字:毫秒> - 设置.sd文件导入的速度
+```
+### 基本几何
+```
+circle <数字:半径> <字符串:方块 | 数字:方块id> [ 数字:特殊值] [x|y|z] - 朝向x/y/z绘制一个圆(方向不填 默认为y)
 
-title content <字符串: 内容> - 设置title的内容
+       fill <true | false> - 是否使用fill模式。true:  是，false: 否 。
 
-     colors <字符串: 颜色> - 设置颜色，每个颜色使用%分割( 例如title colors color1%color2%color3...)
+pen <字符串: 方块> <数字: 特殊值> - 绘制三阶贝塞尔曲线,必须先使用set pos,pos1,pos2,pos3指令,必须在第一象限(不推荐使用)
 
-     players <字符串: 玩家> - 设置显示的玩 家( 可 以是玩家名,@a,@s,@p,@r等， 可以使用选择器)
+maze <数字:长度> <数字:宽度> <数字:高度> <字符串:方块|数字:方块id> [数字:特殊值] - 用xxx特殊值的xxx方块创建一个迷宫(长度和宽度都不得小于5)
 
-     model <字符串: 模式> - 设置title的模式，可以 是title,actionbar等
+      solve - 自动解出上一次生成的迷宫
 
-     start <数字: 毫秒> - 每xxx毫秒刷新并显示一次title
+random <数字:长> <数字:高> <数字:宽> - 生成一个由随机方块组成的区域
 
-     stop - 停止显示
+steeple <数字:半径> <字符串:方块 | 数字:方块id> [数字: 特殊值] - 生成一座尖塔
 
+        fill <true | false> - 设置是否使用/fill模式
+
+sphere <数字: 半径> <字符串: 方块 | 数字: 方块id> [ 数字: 特殊值] - 生成一个球体
+
+        fill [true/false] - 设置是否使用fill模式
+
+
+```
+### 导入/导出 建筑/像素画/二维码
+```
 sche import <字符串: 文件> - 解析并导入.schematic文件
 
      import <字符串: 文件> per <数字: 百分比> - 指定百分比解析并导入.schematic文件
 
-import <字符串: 文件> from <数字: y轴起始点> < 数字: y轴结束点> - 指定高度范围导入schematic文件
+     import <字符串: 文件> from <数字: y轴起始点> < 数字: y轴结束点> - 指定高度范围导入schematic文件
 
-       auto <数字: 索引> - 使用readdir 指令后会显示文件索引，索引代表着相应的文件
+             auto <数字: 索引> - 使用readdir 指令后会显示文件索引，索引代表着相应的文件
 
-       auto <数字: 索引> per <数字: 百分比> - 指定百分比导入文件
+             auto <数字: 索引> per <数字: 百分比> - 指定百分比导入文件
 
-speed <数字: 毫秒> - 设置schematic导入速度(默认7)
+             speed <数字: 毫秒> - 设置schematic导入速度(默认7)
 
 mcfunc  <字符串: 文件> - 运行.mcfunction文件中的命令
 
@@ -74,25 +74,62 @@ nbt speed <数字: 毫秒> - 设置.nbt文件的导入速度(默认7)
 
             auto <数字: 索引> per <数字: 百分比> -  指定百分比导入文件
 
-pos3 - 设置pos3为当前坐标
+pixel <字符串: 路径> - 导入一张.png图片
 
-pen <字符串: 方块> <数字: 特殊值> - 绘制三阶贝塞尔曲线,必须先使用set pos,pos1,pos2,pos3指令,必须在第一象限(不推荐使用)
+      auto <数字: 索引> - 根据索引导入一张png图片
 
-circle <数字:半径> <字符串:方块 | 数字:方块id> [ 数字:特殊值] [x|y|z] - 朝向x/y/z绘制一个圆(方向不填 默认为y)
+      speed <数字: 速度> - 设置生成图片的速度
 
-       fill <true | false> - 是否使用fill模式。true:  是，false: 否 。
+      follow <true | false> - 是否自动跟随
+
+      color_pixel <true | false> - 是否使用彩色像素画模式
+
+export <坐标x增加值> <坐标y增加值> <坐标z增加值> <字符串:文件名> - 导出指定大小的区域
+
+        auto <字符串: 文件名> - 根据set pos, pos1 ,pos2自动计算导出大小(set pos必须在建筑的左上角(对应建筑所有顶点x，y，z坐标 都会增加的位置),pos1,pos2必须位于建筑的对角线)
+
+readdir - 读取./buildings/路径下的所有文件并显示到聊天栏并显示文件索引
+
+tomcfunc <字符串: 文件> - 将.sd文件转化为.mcfunction文 件
 
 qr <字符串: 内容> - 生成含有该内容的二维码
 
    speed <数字: 速度> - 设置生成二维码的速度
 
+
+
+```
+### 其他命令
+```
 about - 关于
 
 version - 版本
 
 help [数字: 页面] - 查看帮助
 
-tomcfunc <字符串: 文件> - 将.sd文件转化为.mcfunction文 件
+eval <字符串: js代码> - 控制台执行javascript代码(调试)
+
+time - 显示当前时间
+
+run <字符串:指令> - 在控制台执行指令并将结果返回到游戏中
+
+times <数字:方块数> - 在自动执行各种导出/导入指令时title的提示速度( 每xxx 方块title一次，默认为20，推荐设置为20)
+
+       import <字符串:文件> - 导入./buildings/ 路径下 的.sd文件
+
+       auto [数字: 索引] - 使用readdir指令后会显示文件索引，索引代表着相应的文件
+
+title content <字符串: 内容> - 设置title的内容
+
+     colors <字符串: 颜色> - 设置颜色，每个颜色使用%分割( 例如title colors color1%color2%color3...)
+
+     players <字符串: 玩家> - 设置显示的玩 家( 可 以是玩家名,@a,@s,@p,@r等， 可以使用选择器)
+
+     model <字符串: 模式> - 设置title的模式，可以 是title,actionbar等
+
+     start <数字: 毫秒> - 每xxx毫秒刷新并显示一次title
+
+     stop - 停止显示
 
 home add <字符串: 家的名称> <here | x y z> - 设置当前坐标为家
 
@@ -118,35 +155,11 @@ home add <字符串: 家的名称> <here | x y z> - 设置当前坐标为家
 
 fastench - 快速附魔手中的物品
 
-maze <数字:长度> <数字:宽度> <数字:高度> <字符串:方块|数字:方块id> [数字:特殊值] - 用xxx特殊值的xxx方块创建一个迷宫(长度和宽度都不得小于5)
-
-      solve - 自动解出上一次生成的迷宫
-
-random <数字:长> <数字:高> <数字:宽> - 生成一个由随机方块组成的区域
-
-steeple <数字:半径> <字符串:方块 | 数字:方块id> [数字: 特殊值] - 生成一座尖塔
-
-        fill <true | false> - 设置是否使用/fill模式
-
-sphere <数字: 半径> <字符串: 方块 | 数字: 方块id> [ 数字: 特殊值] - 生成一个球体
-
-        fill [true/false] - 设置是否使用fill模式
-
 guess start [数字: 起始范围] [数字: 终止范围] - 设置猜数字游戏的数字生成范围
 
        <数字: 猜的数字> - 猜数字
 
        stop - 结束猜数字游戏
-
-pixel <字符串: 路径> - 导入一张.png图片
-
-      auto <数字: 索引> - 根据索引导入一张png图片
-
-      speed <数字: 速度> - 设置生成图片的速度
-
-      follow <true | false> - 是否自动跟随
-
-      color_pixel <true | false> - 是否使用彩色像素画模式
 
 wne start [数字: 速度] - 显示当前坐标
 
@@ -154,9 +167,9 @@ wne start [数字: 速度] - 显示当前坐标
 
 getloc <字符串: 类型> [字符串: 名字]: 在没有op权限的情况下获取任意实体的坐标
 
-range <数字: 起始点的x坐标> <数字: 起始点的z坐标> < 数字:结束点的x坐标> <数字: 结束点的z坐标>: 设置范围.
+       range <数字: 起始点的x坐标> <数字: 起始点的z坐标> < 数字:结束点的x坐标> <数字: 结束点的z坐标>: 设置范围.
 
-accuracy <数字: 精度>: 设置精度.
+       accuracy <数字: 精度>: 设置精度.
 
 set <数字:方块id|字符串:方块名称> [数字: 方块特殊值] [字符串: 其他] - 将pos1和pos2选定的区域fill为指定方块
 
@@ -167,7 +180,9 @@ replace <方块ID:特殊值 | 方块ID | 方块名:特殊值 | 方块 名> <方�
         undo - 撤销本次的操作
 
 clone [字符串: 其他属性] - 将pos1和pos2选定的区域复制到pos3,例:"clone masked move" = "/clone pos1 pos2 pos3 masked move","clone"="/clone pos1 pos2 pos3".
-
+```
+### 配置文件
+```
 config.json文件:
 
         server_port: 端口号
