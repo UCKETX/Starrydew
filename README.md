@@ -1,5 +1,5 @@
 # Starrydew-Wiki
-## 作者：BluefishV (2719149077)
+***作者：BluefishV (2719149077)***
 * StarryDew是基于JavaScript的我的世界基岩版WebSocket快速建造程序
 * 如要了解更多，请加QQ群：[956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
 ---
