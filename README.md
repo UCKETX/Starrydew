@@ -5,7 +5,12 @@
 * [English](./README_en.md)
 
 # Starrydew-Wiki
-***作者：BluefishV (2719149077)***
+***作者：BluefishV (2719149077)
+--Bilibili: BluefishV
+在此感谢以下所有协助我们制作Starrydew的开发者!
+-在线安装版本: voyage27(476445136)
+-方块色库: Sparks(2033161737)
+-安装脚本: UCKET(3228851731)***
 * StarryDew是基于JavaScript的我的世界基岩版WebSocket快速建造程序
 * 如要了解更多，请加QQ群：[956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
 ---
