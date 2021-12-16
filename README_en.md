@@ -202,7 +202,7 @@ clone [string: other attributes]-copy the area selected by pos1 and pos2 to pos3
 
 swc help-View world chat help
 ```
-###Console commands
+### Console commands
 ```
 Console instructions:
     swc help: view world chat help
