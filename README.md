@@ -1,6 +1,9 @@
 ![Image text](./Starrydew.png)
-[简体中文](./README.md)
-[English](./README_en.md)
+
+* [简体中文](./README.md)
+
+* [English](./README_en.md)
+
 # Starrydew-Wiki
 ***作者：BluefishV (2719149077)***
 * StarryDew是基于JavaScript的我的世界基岩版WebSocket快速建造程序
