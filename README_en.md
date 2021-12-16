@@ -6,6 +6,16 @@
 
 # Starrydew-Wiki
 ***Author: BluefishV (2719149077)***
+
+***Bilibili: BluefishV***
+
+***Thanks to all the following developers who assisted us in making Starrydew!***
+
+***-Online installation version: voyage27(476445136)***
+
+***-Cube color library: Sparks(2033161737)***
+
+***-Installation script: UCKET(3228851731)***
 * StarryDew is a JavaScript-based WebSocket quick build program for Minecraft Bedrock Edition
 * To learn more, please join the QQ group: [956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
 ---
@@ -90,6 +100,8 @@ pixel <string: path>-Import a .png image
       follow <true | false>-whether to follow automatically
 
       color_pixel <true | false>-whether to use color pixel painting mode
+      
+      multi_thread <true | false>-Whether to enable multi-thread mode
 
 export <coordinate x increase value> <coordinate y increase value> <coordinate z increase value> <string: file name>-export the area of ​​the specified size
 
@@ -187,34 +199,57 @@ replace <block ID: special value | block ID | block name: special value | block 
         undo-undo this operation
 
 clone [string: other attributes]-copy the area selected by pos1 and pos2 to pos3, for example: "clone masked move" = "/clone pos1 pos2 pos3 masked move", "clone"="/clone pos1 pos2 pos3" .
+
+swc help-View world chat help
 ```
+###Console commands
+```
+Console instructions:
+    swc help: view world chat help
+```
+***Console commands currently only support world chat commands and mc original commands.***
+
 ### Configuration file
 ```
-config.json file:
-
-        server_port: port number
-
-        custom_cmd: Whether to enable custom commands
-
-        customcmd_remind_before_running_mcfunc: Whether to prompt when executing the function file of the custom command
-
-        log_time: Whether to log the message time
-
-        write_log_on_disk: Whether to automatically write console messages to disk (path./data/logs/)
-
-        guessNumberCommand: Whether to enable the guess number command
-
-        language: language
-
-        pixel_tp_every_xxx_cmds: Transmission speed when importing png images (automatically follow if allowed)
-
-        use_cmd_in_console: Whether to enable console commands
-
-        log_in_game_when_run_cmd_in_console: Whether the console command is given back to the players connected to ws
-
-        default: some default values
-
+server_port: port number
+       
+colorPixelThreadCount: The number of color pixel painting analysis threads (if multi-threading is enabled)
+       
+custom_cmd: Whether to enable custom commands (custom command configuration file path: ./data/custom_cmd.json)
+       
+customcmd_remind_before_running_mcfunc: Whether to prompt when executing the function file of the custom instruction
+       
+log_time: Whether to log the message time
+       
+write_log_on_disk: Whether to automatically write console messages to disk (path./data/logs/)
+       
+guessNumberCommand: Whether to enable the guess number command
+       
+language: language
+       
+pixel_tp_every_xxx_cmds: Transmission speed when importing png images (automatically follow if allowed)
+       
+use_cmd_in_console: Whether to enable console commands
+       
+log_in_game_when_run_cmd_in_console: Whether the console command is fed back to the players connected to ws
+       
+enable_worldchat: Whether to enable world chat
+       
+worldchat_address: worldchat server address
+       
+enableNewPixelAlgorithm: Whether to enable the new color pixel drawing algorithm
+       
+defaultFilePath: default path
+       
+colorText: whether to use colored text
+       
+particle_tip: Whether to enable particle tip effect (particle tip when exporting, do not enable it if it causes a stutter)
+       
+enableFastCommand: Whether to enable fast commands (fast command file path: ./data/FastCommand.json)
+       
+default: some default values
+       
 custom_cmd.json file:
 
-        There are instructions inside the file, please open the file with text
+There are instructions inside the file, please open the file with text
 ```
