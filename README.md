@@ -17,8 +17,7 @@
 
 ***-安装脚本: UCKET(3228851731)***
 * StarryDew是基于JavaScript的我的世界基岩版WebSocket快速建造程序
-* 如要了解更多，请加QQ群：[956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
----
+* 如要了解更多，请加QQ群：[424960844](https://jq.qq.com/?_wv=1027&k=msOk61g4)
 ### 基础命令
 ```
 set pos - 保存当前坐标(执行所有导出/导入指令前必须使用 该指令以保存您的位置)
