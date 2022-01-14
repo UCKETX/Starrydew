@@ -17,7 +17,7 @@
 
 ***-Installation script: UCKET(3228851731)***
 * StarryDew is a JavaScript-based WebSocket quick build program for Minecraft Bedrock Edition
-* To learn more, please join the QQ group: [956856716](https://qm.qq.com/cgi-bin/qm/qr?k=vV9gN1xvavBCBQF4AWousWY-0F1vjFuM&jump_from=webapi)
+* To learn more, please join the QQ group: [424960844](https://jq.qq.com/?_wv=1027&k=msOk61g4)
 ---
 ### Basic commands
 ```
