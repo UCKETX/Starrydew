@@ -1,4 +1,8 @@
-//author: EltanceX
+/*
+* @author EltanceX
+* @version 1.8.4
+* @from StarryDew
+*/
 const zlib = require('zlib');
 const readline = require('readline');
 const rl = readline.createInterface({
